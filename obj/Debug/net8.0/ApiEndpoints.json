@@ -1,0 +1,107 @@
+[
+  {
+    "ContainingType": "AppWeb1.Controllers.ProduitController",
+    "Method": "AddProduct",
+    "RelativePath": "Produit/AddProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prix",
+        "Type": "System.Single",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "{libelle}/{prix}"
+  },
+  {
+    "ContainingType": "AppWeb1.Controllers.ProduitController",
+    "Method": "DeleteProduct",
+    "RelativePath": "Produit/DeleteProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "{id}"
+  },
+  {
+    "ContainingType": "AppWeb1.Controllers.ProduitController",
+    "Method": "GetAllProducts",
+    "RelativePath": "Produit/GetAllProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AppWeb1.Models.ProduitModel, AppWeb1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetAllProducts"
+  },
+  {
+    "ContainingType": "AppWeb1.Controllers.ProduitController",
+    "Method": "UpdateProduct",
+    "RelativePath": "Produit/UpdateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "libelle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prix",
+        "Type": "System.Single",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "{id}/{libelle}/{prix}"
+  }
+]

@@ -1,0 +1,165 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AppWeb1",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Produit/GetAllProducts": {
+      "get": {
+        "tags": [
+          "Produit"
+        ],
+        "operationId": "GetAllProducts",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduitModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduitModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduitModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Produit/AddProduct": {
+      "post": {
+        "tags": [
+          "Produit"
+        ],
+        "operationId": "{libelle}/{prix}",
+        "parameters": [
+          {
+            "name": "libelle",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prix",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Produit/UpdateProduct": {
+      "post": {
+        "tags": [
+          "Produit"
+        ],
+        "operationId": "{id}/{libelle}/{prix}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "libelle",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prix",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Produit/DeleteProduct": {
+      "get": {
+        "tags": [
+          "Produit"
+        ],
+        "operationId": "{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProduitModel": {
+        "required": [
+          "libelle",
+          "prix"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "libelle": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "prix": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
